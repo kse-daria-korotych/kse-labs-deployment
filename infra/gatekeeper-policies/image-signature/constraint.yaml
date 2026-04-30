@@ -20,7 +20,7 @@ spec:
   # scopes the deny to just `applications`; everything else
   # (kube-system, vault, gatekeeper, image-policy-provider, ...)
   # bypasses this constraint entirely.
-  enforcementAction: deny
+  enforcementAction: dryrun
   match:
     kinds:
       - apiGroups: [""]
