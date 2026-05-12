@@ -30,3 +30,5 @@ spec:
       kind: ExternalSecret
     - group: ''
       kind: LimitRange
+    - group: cert-manager.io
+      kind: Certificate
