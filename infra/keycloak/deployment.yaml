@@ -24,7 +24,7 @@ spec:
         - name: keycloak
           image: quay.io/keycloak/keycloak:26.3.3
           args:
-            - start-dev
+            - start
             - --import-realm
             - --db=postgres
             - --db-url-host=$(DB_HOST)
@@ -32,8 +32,7 @@ spec:
             - --db-url-database=$(DB_NAME)
             - --db-username=$(DB_USER)
             - --db-password=$(DB_PASSWORD)
-            - --hostname=keycloak.192.168.50.10.nip.io
-            - --hostname-strict=false
+            - --hostname=http://keycloak.192.168.50.10.nip.io
             - --proxy-headers=xforwarded
             - --http-enabled=true
             - --health-enabled=true
@@ -62,6 +61,9 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+            - name: management
+              containerPort: 9000
+              protocol: TCP
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
@@ -82,13 +84,13 @@ spec:
           readinessProbe:
             httpGet:
               path: /health/ready
-              port: http
+              port: management
             initialDelaySeconds: 30
             periodSeconds: 10
           livenessProbe:
             httpGet:
               path: /health/live
-              port: http
+              port: management
             initialDelaySeconds: 60
             periodSeconds: 15
       volumes:
