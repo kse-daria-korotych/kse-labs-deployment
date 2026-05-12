@@ -18,13 +18,13 @@ data:
           "publicClient": true,
           "standardFlowEnabled": true,
           "directAccessGrantsEnabled": true,
-          "rootUrl": "http://spa-token-demo.192.168.50.10.nip.io",
+          "rootUrl": "https://spa-token-demo.192.168.50.10.nip.io",
           "redirectUris": [
-            "http://spa-token-demo.192.168.50.10.nip.io/*",
+            "https://spa-token-demo.192.168.50.10.nip.io/*",
             "http://localhost:3000/*"
           ],
           "webOrigins": [
-            "http://spa-token-demo.192.168.50.10.nip.io",
+            "https://spa-token-demo.192.168.50.10.nip.io",
             "http://localhost:3000"
           ],
           "protocol": "openid-connect"

@@ -3,8 +3,14 @@ kind: Ingress
 metadata:
   name: session-cookie-demo
   namespace: applications
+  annotations:
+    cert-manager.io/cluster-issuer: vault-pki-int
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - session-cookie-demo.192.168.50.10.nip.io
+      secretName: session-cookie-demo-tls
   rules:
     - host: session-cookie-demo.192.168.50.10.nip.io
       http:

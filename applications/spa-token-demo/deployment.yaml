@@ -48,7 +48,7 @@ spec:
                   name: spa-token-demo-db
                   key: password
             - name: KEYCLOAK_ISSUER_URI
-              value: http://keycloak.192.168.50.10.nip.io/realms/api-security
+              value: https://keycloak.192.168.50.10.nip.io/realms/api-security
           securityContext:
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false

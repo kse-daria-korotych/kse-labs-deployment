@@ -3,8 +3,14 @@ kind: Ingress
 metadata:
   name: spa-token-demo
   namespace: applications
+  annotations:
+    cert-manager.io/cluster-issuer: vault-pki-int
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - spa-token-demo.192.168.50.10.nip.io
+      secretName: spa-token-demo-tls
   rules:
     - host: spa-token-demo.192.168.50.10.nip.io
       http:
