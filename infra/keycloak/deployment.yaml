@@ -38,7 +38,7 @@ spec:
             - --health-enabled=true
           env:
             - name: DB_HOST
-              value: "192.168.151.10"
+              value: "keycloak-postgres"
             - name: DB_PORT
               value: "5432"
             - name: DB_NAME
