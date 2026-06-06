@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spa-token-demo-postgres
+  namespace: applications
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spa-token-demo-postgres
+  template:
+    metadata:
+      labels:
+        app: spa-token-demo-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: spa_token_demo
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: spa-token-demo-db
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: spa-token-demo-db
+                  key: password
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: data
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spa-token-demo-postgres
+  namespace: applications
+spec:
+  selector:
+    app: spa-token-demo-postgres
+  ports:
+    - port: 5432
+      targetPort: 5432

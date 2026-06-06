@@ -32,7 +32,7 @@ spec:
               protocol: TCP
           env:
             - name: DB_HOST
-              value: "192.168.50.10"
+              value: "spa-token-demo-postgres"
             - name: DB_PORT
               value: "5432"
             - name: DB_NAME
