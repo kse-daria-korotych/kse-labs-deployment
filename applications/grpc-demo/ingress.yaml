@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - grpc-demo.192.168.50.10.nip.io
+        - grpc-demo.192.168.151.10.nip.io
       secretName: grpc-demo-tls
   rules:
-    - host: grpc-demo.192.168.50.10.nip.io
+    - host: grpc-demo.192.168.151.10.nip.io
       http:
         paths:
           - path: /

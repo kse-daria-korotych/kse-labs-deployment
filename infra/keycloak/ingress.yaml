@@ -6,10 +6,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - keycloak.192.168.50.10.nip.io
+        - keycloak.192.168.151.10.nip.io
       secretName: keycloak-tls
   rules:
-    - host: keycloak.192.168.50.10.nip.io
+    - host: keycloak.192.168.151.10.nip.io
       http:
         paths:
           - path: /

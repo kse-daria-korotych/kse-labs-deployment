@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - soap-demo.192.168.50.10.nip.io
+        - soap-demo.192.168.151.10.nip.io
       secretName: soap-demo-tls
   rules:
-    - host: soap-demo.192.168.50.10.nip.io
+    - host: soap-demo.192.168.151.10.nip.io
       http:
         paths:
           - path: /

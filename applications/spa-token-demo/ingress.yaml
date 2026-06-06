@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - spa-token-demo.192.168.50.10.nip.io
+        - spa-token-demo.192.168.151.10.nip.io
       secretName: spa-token-demo-tls
   rules:
-    - host: spa-token-demo.192.168.50.10.nip.io
+    - host: spa-token-demo.192.168.151.10.nip.io
       http:
         paths:
           - path: /
