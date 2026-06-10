@@ -25,7 +25,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: spa-token-demo
-          image: ghcr.io/kse-daria-korotych/spa-token-demo:67a7942d6649e1244d00e0aba18dc3d2bd6be3d1
+          image: ghcr.io/kse-daria-korotych/spa-token-demo:ad0c3b0c0a1aaa38ded76ebaa11d10f0fd185d01
           ports:
             - name: http
               containerPort: 8080
@@ -48,7 +48,7 @@ spec:
                   name: spa-token-demo-db
                   key: password
             - name: KEYCLOAK_ISSUER_URI
-              value: https://keycloak.192.168.151.10.nip.io/realms/api-security
+              value: https://keycloak.192.168.151.10.nip.io/realms/daria-korotych-lab
           securityContext:
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
