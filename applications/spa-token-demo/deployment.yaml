@@ -25,7 +25,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: spa-token-demo
-          image: ghcr.io/kse-daria-korotych/spa-token-demo:9e7a989b111d56a9a1e600b74d66188e189b17e3
+          image: ghcr.io/kse-daria-korotych/spa-token-demo:a02eb249802a02db549f05bd87076bbfc95105fd
           ports:
             - name: http
               containerPort: 8080
