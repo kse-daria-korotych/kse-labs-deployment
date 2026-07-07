@@ -26,14 +26,14 @@ spec:
       containers:
         - name: authz-demo
           # CI (authz-demo repo) replaces this tag with the built commit sha.
-          image: ghcr.io/kse-bd8338bbe006/authz-demo:470943e115e7feab24010452fbb0c3b11bfb927c
+          image: ghcr.io/kse-daria-korotych/authz-demo:e84580e4e213685a45974ab6a70c534e8750bc8f
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
           env:
             - name: DB_HOST
-              value: "192.168.50.10"
+              value: "192.168.151.10"
             - name: DB_PORT
               value: "5432"
             - name: DB_NAME
@@ -49,7 +49,7 @@ spec:
                   name: authz-demo-db
                   key: password
             - name: KEYCLOAK_ISSUER_URI
-              value: https://keycloak.192.168.50.10.nip.io/realms/api-security
+              value: https://keycloak.192.168.151.10.nip.io/realms/api-security
             - name: KEYCLOAK_RESOURCE_SERVER
               value: documents-api
             - name: OPENFGA_API_URL

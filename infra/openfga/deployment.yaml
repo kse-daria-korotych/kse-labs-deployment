@@ -40,7 +40,7 @@ spec:
                   name: openfga-db-credentials
                   key: db-password
             - name: OPENFGA_DATASTORE_URI
-              value: "postgres://$(DB_USER):$(DB_PASSWORD)@192.168.50.10:5432/openfga?sslmode=disable"
+              value: "postgres://$(DB_USER):$(DB_PASSWORD)@192.168.151.10:5432/openfga?sslmode=disable"
           securityContext:
             allowPrivilegeEscalation: false
             readOnlyRootFilesystem: true
@@ -71,7 +71,7 @@ spec:
                   name: openfga-db-credentials
                   key: db-password
             - name: OPENFGA_DATASTORE_URI
-              value: "postgres://$(DB_USER):$(DB_PASSWORD)@192.168.50.10:5432/openfga?sslmode=disable"
+              value: "postgres://$(DB_USER):$(DB_PASSWORD)@192.168.151.10:5432/openfga?sslmode=disable"
           ports:
             - name: http
               containerPort: 8080

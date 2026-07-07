@@ -33,9 +33,9 @@ spec:
               protocol: TCP
           env:
             - name: KEYCLOAK_ISSUER_URI
-              value: https://keycloak.192.168.50.10.nip.io/realms/api-security
+              value: https://keycloak.192.168.151.10.nip.io/realms/api-security
             - name: PUBLIC_BASE_URL
-              value: https://dpop-rs.192.168.50.10.nip.io
+              value: https://dpop-rs.192.168.151.10.nip.io
           securityContext:
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false

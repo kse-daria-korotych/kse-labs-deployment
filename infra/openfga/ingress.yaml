@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - openfga.192.168.50.10.nip.io
+        - openfga.192.168.151.10.nip.io
       secretName: openfga-tls
   rules:
-    - host: openfga.192.168.50.10.nip.io
+    - host: openfga.192.168.151.10.nip.io
       http:
         paths:
           - path: /

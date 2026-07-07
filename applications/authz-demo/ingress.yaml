@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - authz-demo.192.168.50.10.nip.io
+        - authz-demo.192.168.151.10.nip.io
       secretName: authz-demo-tls
   rules:
-    - host: authz-demo.192.168.50.10.nip.io
+    - host: authz-demo.192.168.151.10.nip.io
       http:
         paths:
           - path: /
