@@ -22,7 +22,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: keycloak
-          image: quay.io/keycloak/keycloak:26.3.3
+          image: quay.io/keycloak/keycloak:26.6.3
           args:
             - start
             - --import-realm
@@ -36,6 +36,8 @@ spec:
             - --proxy-headers=xforwarded
             - --http-enabled=true
             - --health-enabled=true
+            - --spi-x509cert-lookup-provider=nginx
+            - --spi-x509cert-lookup-nginx-ssl-client-cert=ssl-client-cert
           env:
             - name: DB_HOST
               value: "keycloak-postgres"
