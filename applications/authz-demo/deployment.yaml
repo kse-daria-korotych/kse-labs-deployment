@@ -26,7 +26,7 @@ spec:
       containers:
         - name: authz-demo
           # CI (authz-demo repo) replaces this tag with the built commit sha.
-          image: ghcr.io/kse-daria-korotych/authz-demo:e84580e4e213685a45974ab6a70c534e8750bc8f
+          image: ghcr.io/kse-daria-korotych/authz-demo:066031a5a9f2ae3082467673b0134ad6af5f1b21
           ports:
             - name: http
               containerPort: 8080
